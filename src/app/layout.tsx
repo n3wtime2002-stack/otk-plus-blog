@@ -4,7 +4,6 @@ import type { ReactNode } from "react";
 import "./globals.css";
 import { Background } from "@/components/Background";
 import { Nav } from "@/components/Nav";
-import { heroImage } from "@/data/blog";
 import { siteUrl } from "@/lib/site";
 
 const inter = Inter({
@@ -59,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "Контроль со знаком “Плюс”",
     images: [
       {
-        url: heroImage,
+        url: `${siteUrl}/images/anna-portrait.jpg`,
         width: 1123,
         height: 1301,
         alt: "Анна, автор блога «Контроль со знаком “Плюс”»"

@@ -9,6 +9,7 @@ import {
   TriangleAlert,
   Wrench
 } from "lucide-react";
+import { publicAsset } from "@/lib/site";
 
 export type ContentBlock =
   | { type: "paragraph"; text: string; accent?: boolean }
@@ -261,4 +262,4 @@ export const sections: BlogSection[] = [
   }
 ];
 
-export const heroImage = "/images/anna-portrait.jpg";
+export const heroImage = publicAsset("/images/anna-portrait.jpg");
