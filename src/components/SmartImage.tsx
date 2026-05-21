@@ -17,11 +17,18 @@ export function SmartImage({ alt, className, wrapperClassName, onLoad, onError, 
 
   return (
     <div className={cn("absolute inset-0", wrapperClassName)}>
+      <div
+        aria-hidden="true"
+        className={cn(
+          "absolute inset-0 bg-[linear-gradient(135deg,rgba(255,174,54,0.18),transparent_36%),repeating-linear-gradient(45deg,rgba(255,255,255,0.06)_0,rgba(255,255,255,0.06)_1px,transparent_1px,transparent_12px)] transition-opacity duration-300",
+          loaded && !failed ? "opacity-0" : "opacity-100"
+        )}
+      />
       {!failed ? (
         <Image
           {...props}
           alt={alt}
-          className={cn(className, loaded ? "opacity-100" : "opacity-0")}
+          className={cn(className, "relative z-10")}
           placeholder="blur"
           blurDataURL={blurDataURL}
           onLoad={(event) => {
@@ -34,13 +41,6 @@ export function SmartImage({ alt, className, wrapperClassName, onLoad, onError, 
           }}
         />
       ) : null}
-      <div
-        aria-hidden="true"
-        className={cn(
-          "absolute inset-0 bg-[linear-gradient(135deg,rgba(255,174,54,0.18),transparent_36%),repeating-linear-gradient(45deg,rgba(255,255,255,0.06)_0,rgba(255,255,255,0.06)_1px,transparent_1px,transparent_12px)] transition-opacity duration-300",
-          loaded && !failed ? "opacity-0" : "opacity-100"
-        )}
-      />
     </div>
   );
 }
