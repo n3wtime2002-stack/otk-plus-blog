@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://n3wtime2002-stack.github.io/otk-plus-blog/sitemap.xml
